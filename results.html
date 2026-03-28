@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>成果数据 - 无人机农业测绘项目</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="topnav"><div class="inner">
+    <a href="index.html">首页</a>
+    <a href="principles.html">方案原理</a>
+    <a href="modules.html">创新模块</a>
+    <a class="active" href="results.html">成果数据</a>
+    <a href="gallery.html">实物展示</a>
+  </div></nav>
+
+  <div class="wrap">
+    <section class="hero" style="padding-top:24px">
+      <div class="hero-main">
+        <h1>结项关键数据</h1>
+        <p class="sub">本页汇总PPT中明确的指标口径与结果展示项，适用于答辩讲解与评审查阅。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cards">
+        <article class="card">
+          <h3>路径规划指标（6项）</h3>
+          <p>总航程、任务完成时间、能耗估计、最小安全距离、碰撞次数、重规划次数；规划链路为 K-means + GA + B样条。</p>
+        </article>
+        <article class="card">
+          <h3>检测评估指标（5项）</h3>
+          <p>mAP@0.5、mAP@[0.5:0.95]、Precision、Recall、FPS；检测链路为改进 YOLOv8 + 注意力机制。</p>
+        </article>
+        <article class="card">
+          <h3>协同与避撞指标（4项）</h3>
+          <p>协同完成时延、机间最小距离、任务分配均衡度、返航成功率；避撞响应目标 0.1s。</p>
+        </article>
+        <article class="card">
+          <h3>天气增强与点云表型</h3>
+          <p>IA-YOLO 用于天气退化增强；ULS多时相指标参考：R² 0.99–1.00，RMSE 0.04–0.09m。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="title">项目里程碑与预算</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>阶段安排</h3>
+          <p>11–12月：文献与理论；1–3月：程序设计与实现；4–5月：调研与采集；6–7月：统计分析与结题材料。</p>
+        </article>
+        <article class="card">
+          <h3>经费结构（元）</h3>
+          <p>论文文献打印 30；实验器材 200；办公用品 70；外出调研 200；合计 500。</p>
+        </article>
+      </div>
+      <table class="table" style="margin-top:12px">
+        <thead><tr><th>数据项</th><th>来源口径</th></tr></thead>
+        <tbody>
+          <tr><td>0.1s避撞响应目标</td><td>项目材料中协同避撞目标描述</td></tr>
+          <tr><td>300m / ≤1.5°</td><td>毫米波雷达能力口径</td></tr>
+          <tr><td>R² 0.99–1.00, RMSE 0.04–0.09m</td><td>ULS多时相文献指标（PPT引用）</td></tr>
+          <tr><td>预算500元</td><td>结项预算明细</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

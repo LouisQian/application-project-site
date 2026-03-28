@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>方案原理 - 无人机农业测绘项目</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="topnav"><div class="inner">
+    <a href="index.html">首页</a>
+    <a class="active" href="principles.html">方案原理</a>
+    <a href="modules.html">创新模块</a>
+    <a href="results.html">成果数据</a>
+    <a href="gallery.html">实物展示</a>
+  </div></nav>
+
+  <div class="wrap">
+    <section class="hero" style="padding-top:24px">
+      <div class="hero-main">
+        <h1>系统方案与动态原理</h1>
+        <p class="sub">技术链路：感知输入（77GHz雷达/视觉）→ 路径优化（K-means + GA + B样条）→ 协同控制（HMOEA/PSO）→ 检测输出（YOLOv8、IA-YOLO）→ 点云表型（ULS LiDAR）。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="title">动态联动演示</h2>
+      <div class="run-grid">
+        <div class="canvas-box">
+          <canvas id="flightCanvas" width="900" height="340"></canvas>
+          <p class="note">无人机沿优化航线巡检，障碍出现后触发局部重规划并恢复主路径。</p>
+        </div>
+        <div class="status-box">
+          <ul class="status-list">
+            <li class="status-item"><span>传感器融合（雷达/视觉）</span><span class="pill pending" data-key="sense">待触发</span></li>
+            <li class="status-item"><span>路径代价更新</span><span class="pill pending" data-key="cost">待触发</span></li>
+            <li class="status-item"><span>局部重规划</span><span class="pill pending" data-key="replan">待触发</span></li>
+            <li class="status-item"><span>协同冲突检查</span><span class="pill pending" data-key="coord">待触发</span></li>
+            <li class="status-item"><span>检测推理输出</span><span class="pill pending" data-key="detect">待触发</span></li>
+            <li class="status-item"><span>航迹稳定恢复</span><span class="pill pending" data-key="resume">待触发</span></li>
+          </ul>
+          <div class="detector" title="虫害检测动态示意（彩框=模型识别目标）">
+            <div class="bbox" style="left:14%;top:24%;width:20%;height:28%;"><span class="bbox-label">检测目标A</span></div>
+            <div class="bbox" style="left:48%;top:34%;width:18%;height:22%;"><span class="bbox-label">检测目标B</span></div>
+            <div class="bbox" style="left:72%;top:18%;width:14%;height:24%;"><span class="bbox-label">检测目标C</span></div>
+          </div>
+          <p class="note">彩色框是检测模型输出框，表示识别到的候选虫害区域。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="title">系统架构</h2>
+      <div class="cards">
+        <article class="card"><h3>感知层</h3><p>毫米波雷达、多光谱、热像与可选ULS LiDAR同步采集。</p></article>
+        <article class="card"><h3>规划层</h3><p>K-means 分区，GA 优化访问序列，B样条平滑航迹。</p></article>
+        <article class="card"><h3>控制层</h3><p>多机协同采用 HMOEA 与 PSO，兼顾航程、时间、避撞。</p></article>
+        <article class="card"><h3>任务层</h3><p>虫害检测与恶劣天气增强输出，支撑农业测绘与监测决策。</p></article>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

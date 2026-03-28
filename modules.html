@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>创新模块 - 无人机农业测绘项目</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="topnav"><div class="inner">
+    <a href="index.html">首页</a>
+    <a href="principles.html">方案原理</a>
+    <a class="active" href="modules.html">创新模块</a>
+    <a href="results.html">成果数据</a>
+    <a href="gallery.html">实物展示</a>
+  </div></nav>
+
+  <div class="wrap">
+    <section class="hero" style="padding-top:24px">
+      <div class="hero-main">
+        <h1>六大创新模块</h1>
+        <p class="sub">按照结项材料主线，将“感知-规划-协同-检测-增强-点云”六个模块独立展示，避免只讲思路、不讲成果。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cards">
+        <article class="card">
+          <h3>模块1：77GHz 动态避障</h3>
+          <p>重点参数口径：77GHz、约300m探测目标、角分辨≤1.5°。面向复杂农田障碍物的稳定感知输入。</p>
+        </article>
+        <article class="card">
+          <h3>模块2：路径最优化</h3>
+          <p>K-means 子区域划分，GA 优化访问顺序，B样条平滑航迹，目标是降低跨区往返与航迹曲率。</p>
+        </article>
+        <article class="card">
+          <h3>模块3：多机协同</h3>
+          <p>HMOEA（MMD策略 + JOR策略）结合PSO精调，支持异构机群任务分配与机间避撞。</p>
+        </article>
+        <article class="card">
+          <h3>模块4：改进YOLOv8检测</h3>
+          <p>面向病虫害检测场景，指标口径包含 mAP、Precision、Recall、FPS，兼顾检测准确率与部署速度。</p>
+        </article>
+        <article class="card">
+          <h3>模块5：IA-YOLO天气增强</h3>
+          <p>采用 DIP + CNN-PP + YOLOv3 架构，应对雾天/弱光等天气退化，提高检测输入质量。</p>
+        </article>
+        <article class="card">
+          <h3>模块6：ULS LiDAR三维表型</h3>
+          <p>多时相点云支持作物三维结构测量，PPT文献口径指标：R² 0.99–1.00，RMSE 0.04–0.09m。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="title">模块输出对接</h2>
+      <table class="table">
+        <thead>
+          <tr><th>输入</th><th>处理</th><th>输出</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>雷达/视觉/点云</td><td>融合感知 + 障碍建模</td><td>可通行区域与风险代价图</td></tr>
+          <tr><td>任务点集合</td><td>K-means + GA + B样条</td><td>可执行航线与平滑轨迹</td></tr>
+          <tr><td>图像流</td><td>YOLOv8/IA-YOLO推理</td><td>检测框、类别、置信度</td></tr>
+          <tr><td>多时相点云</td><td>高度反演与质量控制</td><td>表型指标（R²、RMSE等）</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>
